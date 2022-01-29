@@ -1,0 +1,588 @@
+<html>
+    <head>
+        <title>Spectrum</title>
+        <link rel="icon" href="spectrum-logo-white.jpeg" type="image/icon type">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="spectrum/spectrum.css"> -->
+        <style>
+            html{
+      scroll-behavior:smooth; 
+}
+body{
+      margin:0px;
+      background-color: #2234ae;
+background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+
+
+     /* background-color:black;*/
+}
+
+
+/*Intro*/
+/*Header CSS starts here*/
+/*NAVBAR*/
+#navbarDisplay{
+      animation-name:navbarDisplay;
+      animation-duration:5s;    
+}
+.position-navbar{
+      width:98%;
+      left:1%;
+}
+
+#ecs-logo{
+      height:4.5vw ;
+      width: auto;        
+}
+#nav-text{
+      font-size:25px; 
+      font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter';
+}
+
+
+@media only screen and (max-width:768px){
+     #ecs-logo{
+      height:2em ;
+      width: auto;         
+} 
+#nav-text{
+      font-size:20px;  
+}
+}
+/*Navbar css ends here*/
+
+
+.intro{
+      min-height:99.5%;
+      width: 100%; 
+      background-repeat:no-repeat; 
+      background-position:top;
+      background-size:100% 100%; 
+     /* border-bottom-left-radius: 20%;*/
+      border-bottom-right-radius: 20%;
+      border-bottom-style:solid ;     
+      border-color:white; 
+      position:relative;              
+}
+.intro-img{
+      width: 25%;
+      position: relative;
+      display: none;
+      animation-name: logo;
+      animation-duration: 2s;
+}
+
+.spectrum{
+      width:60%;
+      margin: 0;
+      /*position: relative;
+      top:35vh;*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.text{
+      display:none;
+      width: 75%;
+      height: 26.30894607837vw;
+      margin: 0;
+      position: absolute;
+      
+}
+.text p{
+      color:white;
+      
+}
+#text1{
+      top:5.2618921568vw;
+      font-size:5.2618921568vw;
+      font-family: 'Redressed', cursive;
+      position: absolute;
+      left: 1vw; 
+      width: 100%;
+      letter-spacing:1vw;
+      animation-name: text1;
+      animation-duration: 1.5s;
+}
+#text2{
+      font-size:3.9464191176vw;
+      top:13.154730392vw;
+      font-family: 'Redressed', cursive;    
+      position: absolute;
+      left: 1vw; 
+      width: 100%;
+      letter-spacing:0vw;
+      animation-name: text2;
+      animation-duration: 1.5s; 
+}
+
+@keyframes logo {
+  0%{
+      opacity:0;
+      left:37.5%;
+      }
+      50%{
+      opacity:  1;
+      left:37.5%;
+      }
+      100%{
+      left:0%;
+      }
+}
+@keyframes text1 {
+  0%{
+      opacity:0;
+      }
+      100%{
+      opacity:  1;
+      }
+}
+@keyframes text2 {
+  0%{
+      opacity:0;
+      }
+      50%{
+      opacity: 0;
+      }
+      100%{
+      opacity:  1;
+      }
+}
+@keyframes navbarDisplay {
+  0%{
+      opacity:0;
+      
+      }
+      80%{
+      opacity:0;
+      }
+      100%{
+      opacity:  1;
+      }
+}
+
+
+/*mobile view*/
+@media only screen and (max-width: 768px) {
+      .intro-img{
+            width:25%;
+      }
+      .small-screen-spectrum{
+            min-height:75%;     
+      }
+      .spectrum{
+            position: relative;
+            height:auto;
+            top:37.5vh;
+            width:75%;
+            left:12.5%;
+            -ms-transform: translate(0%, 0%);
+            transform: translate(-0%,-50%);      
+      }
+      .navbar{
+            min-height:10% ;
+            position: fixed;  
+      }
+      .text{
+            width: 75%;
+            height: 32.88682598vw;    
+      }
+      #text1{
+            top:7.077365196vw;
+            font-size:7.077365196vw;
+      }
+      #text2{
+            font-size:5.5vw;
+            top:16.15473039vw;
+      }
+}
+/*mobile view ends here*/
+
+
+/*header background css starts here*/
+@media only screen and (max-width: 479px) {
+      .intro{
+      background-image:url('bg25(2).png');
+      }
+}
+
+@media only screen and (min-width: 480px) {
+      .intro{
+      background-image:url('bg25(1).png');
+      }
+}
+/*header background css ends here*/
+
+/*Header code ends here*/
+
+
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+.modules_section{
+      position:relative;
+      min-height:97.5vh;
+      top:2.5vh;
+      width:95%;
+      left:2.5%;
+      border-style:solid;
+      border-color:white;  
+      border-radius:2%;
+}
+.modules_heading{
+      font-family: Bookman;
+      font-variant:small-caps;
+      height:10vh;
+      text-align:center;
+      top:50%;
+      font-size:10vh;
+      color:white; 
+      position:relative;      
+              
+}
+.modules{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height:85vh;
+}
+.modules .box{
+    position: relative;
+    width: 325px;
+    min-height: 450px;
+    color: #fff;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    margin: 20px 25px;
+    transition: 0.5s;
+}
+
+.modules .box:hover{
+    transform: translateY(-20px);
+}
+.modules .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,#ffbc00,#ff0058);
+}
+.modules .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,#ffbc00,#ff0058);
+    filter: blur(10px);
+}
+.modules .box:nth-child(2)::before,
+.modules .box:nth-child(2)::after{
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+}
+.modules .box:nth-child(3)::before,
+.modules .box:nth-child(3)::after{
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
+}
+.modules .box span{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+.modules .box span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+.modules .box .content{
+    position: relative;
+    z-index: 10;
+    padding: 20px 40px;
+}
+.modules .box .content h2{
+    font-size: 1.75em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.modules .box .content p{
+    font-size: 1.1em;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+.modules .box .content a{
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background: #fff;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.content h2{
+      font-family: Bookman;
+      font-variant:small-caps;
+}
+.content p{
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+.content a{
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+
+
+
+
+
+
+
+/*Footer*/
+.footer{
+      border-top-style:solid;
+      border-top-right-radius:20%; 
+      border-top-left-radius:20%;     
+      top:5%;
+      position:relative; 
+      border-color:white; 
+      background-color: #2234ae;
+background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+
+        
+}
+
+.developers h3,.contact_info h3{
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+      font-size:1.3rem;
+      width:100%;
+      text-align:center;      
+}
+
+.developers img{
+      height:14.5vw ;
+      width:14.5vw;
+}
+.footer_head{
+      font-family: Bookman;
+      font-variant:small-caps;
+      width: 100%;
+      text-align:center;
+      font-size:3rem;
+}
+
+
+@media only screen and (max-width:1200px){
+  .developers img{
+      height:35vh;
+      width: 35vh;
+}  
+.developers h3,.contact_info h3{
+      font-size:20px;     
+} 
+.footer_head{
+      font-size:2.25rem;
+} 
+}
+
+.facebook:hover{
+            animation-name:change_logo_bg;
+            animation-duration:1s;
+            background-color:aqua;
+} 
+@keyframes change_logo_bg{
+      0%{
+            background-color:transparent; 
+      }
+      100%{
+            background-color:aqua; 
+      }
+}
+
+        </style>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>  
+
+    
+        <header class="intro">
+                <nav class="navbar  navbar-expand-md navbar-light navbar-trans menubar" id="navbarDisplay">
+        <a class="navbar-brand" href="/" style="color:white">
+            <img src="logo4.png" id="ecs-logo">
+        </a>    
+        <button class="navbar-toggler navbar-toggler-right d-md-none" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link active" id="nav-text" href="#" style="color:grey; cursor: default;">Home</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="#modules_section" style="color:white">Modules</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="#contact" style="color:white">Contact Us</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="#developers" style="color:white">Developers</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+             
+
+
+           
+
+                <div class="small-screen-spectrum">
+               <div class="spectrum"><img class="intro-img" src="logo-1.png"><div class="text"><p id="text1">PECTRUM 7.0</p><p id="text2">The Elxir of electronics</p></div></div></div>
+        </header>
+        
+        <section class="modules_section" id="modules_section">   
+        <h1 class="modules_heading">Modules</h1>            
+        <div class="modules">
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Technical Module</h2>
+                <p>Would be dare to miss the technical bit while studying in a technical institute? No, right!
+                    <br>So, here is the bunch of tech-bits to munch in.</p>
+                <a href="./technical">Read More</a>
+            </div>
+        </div>
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Literary Module</h2>
+                <p>Read, write and narrate, but without passion? Ugh! That's dull, that's why we are here to test the literary freaks with their stored creativity in the literary fields. Just dive into the versatility of your character, kids!</p>
+                <a href="./literary">Read More</a>
+            </div>
+        </div>
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Fun Module</h2>
+                <p>Life without fun? Seems meaningless, atleast for us. Wake up, let's have the fun till it's the end of life. Are you ready to add the fun element to your life?</p>
+                <a href="./fun">Read More</a>
+            </div>
+        </div>
+    </div>
+        </section>
+
+
+        <footer id="contact" class="footer">
+  <div class="row no-gutters" style="color:white;padding:30px;">
+    
+    <div class="col-xl-4" id="contact" style="text-align: center;margin-top:40px">
+      <h1 class="footer_head">Contact us</h1><br>
+      <div class="col-xl-12 contact_info"><h3><a style="font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter';">Email : ecs.nits2021@gmail.com</a></h3></div>
+      <br>
+      <div class="col-xl-12 contact_info"><h3><span style="text-align:center;margin-top:15px"><b style="color:gray;font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter';">Follow us On:</b>
+                <a href="https://www.facebook.com/spectrum.nits"><i class="fa fa-facebook facebook" style="color: #fff;border:solid 2px #fff;padding:8px;margin-right:4px;"></i></a>
+                    </span></h3></div>
+    </div>
+    <div class="col-xl-8" id="developers" style="text-align: center;margin-top:40px">
+        <h1 class="footer_head">Developed By:</h1>
+        <div class="row no-gutters" style="color:white;padding:30px;">
+           <div class="col-xl-3 developers"><img src="aditya.jpg"><h3>Aditya Bhura</h3></div>
+           <div class="col-xl-1"></div>
+           <div class="col-xl-3 developers"><img src="kaustubh.jpg"><h3>Kaustubh Patil</h3></div>
+           <div class="col-xl-1"></div>
+           <div class="col-xl-3 developers"><img src="aadi.jpg"><h3>Aadi Verma</h3></div>
+           <div class="col-xl-1"></div>
+        </div>       
+    </div>
+  </div>
+</footer>
+        
+
+    <script type="text/javascript">
+        var introImg=document.getElementsByClassName("intro-img");
+        var text=document.getElementsByClassName("text");
+        var navbarDisplay=document.getElementById("navbarDisplay");
+        // console.log(text[0]);
+
+        let start = Date.now();
+        let timer = setInterval(function() {
+        // how much time passed from the start?
+        let timePassed = Date.now() - start;
+        // console.log(timePassed);
+        if (timePassed >= 500) {
+            // console.log("CLEARING");
+            clearInterval(timer);
+            introImgDisplay();
+            return;
+        }
+            
+        },0.5);
+
+        function introImgDisplay() {
+            introImg[0].style.display="inline-block";
+            // console.log("Displayed spectrum logo");
+        }   
+
+
+        let start1 = Date.now();
+        let timer1 = setInterval(function() {
+        // how much time passed from the start?
+        let timePassed1 = Date.now() - start1;
+        // console.log(timePassed1);
+        if (timePassed1 >= 2500) {
+            // console.log("CLEARING");
+            clearInterval(timer1);
+            textDisplay();
+            return;
+        }
+            
+        },2.5);
+
+        function textDisplay() {
+            text[0].style.display="inline-block";
+            // console.log("hello");
+        }
+
+
+
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+
+</html>

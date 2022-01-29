@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spectrum | Literary Module</title>
+    <link rel="icon" href="spectrum-logo-white.jpeg" type="image/icon type">
+     <!--fonts-->
+     <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400&family=Merriweather&family=Roboto:ital,wght@0,500;0,700;0,900;1,500;1,700;1,900&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- stylesheet -->
+    <style>
+        body{
+            background: fixed;
+            max-height: 1000px;
+      } 
+
+#nav-text{
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+
+
+/*******************TITLE***************/
+/****/
+ .loader {
+    background: white;
+   /* background: radial-gradient(#222, #000);*/
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+    spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+  ;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+.loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+.loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+.loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+.loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%, 15% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+  /*Show body content and hide loading*/
+  #body-content{
+    animation-name:showContent;
+    animation-duration:1s
+  }
+
+  @keyframes showContent{
+    0%{
+      opacity:0;
+    }100%{
+      opacity:1;
+    }
+  }
+
+
+
+
+
+
+
+/* selectors */
+ 
+ .title{
+  /*  font-weight:bold;*/
+      font-family: Bookman;
+      font-variant:small-caps;
+     text-align: center;
+     padding-top: 4%;
+     padding-bottom: 5%;
+     font-size: 10vh;
+     color: #edffec;
+ }
+ 
+ /******************Background*****************/
+ 
+ .triangle-right {
+     z-index: -1;
+     position: fixed;
+     left: 0;
+     bottom: -6%;
+	width: 0;
+	height: 0;
+	border-top: 300px solid transparent;
+	border-left: 15vw solid #28313b;
+    border-bottom: 150px solid transparent;
+    filter: drop-shadow(2px 2px 5px 	#7c9473);
+}
+
+.triangle-left {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    top: 5vh;
+	width: 0;
+	height: 0;
+	border-top: 150px solid transparent;
+	border-right: 15vw solid #28313b;
+    border-bottom: 300px solid transparent;
+    filter: drop-shadow(0px 2px 2px 	#f8f5f1);
+}
+/******************EVENTS**************/
+/*selector*/
+.slideUp {
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;
+	animation-duration: 2.5s;
+	-webkit-animation-duration: 2.5s;
+	visibility: visible;
+  }
+  
+  @keyframes slideUp {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translateY(70%);
+	} 
+	100% {
+	  opacity: 1;
+	  -webkit-transform: translateY(0%);
+	}
+  }
+  
+  @-webkit-keyframes slideUp {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translateY(70%);
+	} 
+	100% {
+	  opacity: 1;
+	  -webkit-transform: translateY(0%);
+	}
+  }
+
+h2{
+    padding: 0 0 2%;
+    font-size: 10vh;
+    font-family: Bookman;
+    font-weight:bold;
+    font-weight: 800;
+    color:white;
+}
+p{
+    padding: 2% 0 2%;
+    line-height: 1.5;
+    font-size: 20px;
+    /*font-family: 'Merriweather', serif;*/
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+    color: white;
+}
+button{
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+    padding: 1% 0 2%;
+}
+
+/* class selectors */
+.row{
+    text-align: center;
+    padding: 3% 0 3% 0;
+    margin: 50px auto 50px auto;
+    width: 90%;
+    margin-left: 0px;
+    
+}
+.events{
+    margin: 0 0 0 11%;
+    padding: 0% 3% 2% 3%;
+}
+.event-image{
+    width: 30%;
+}
+.left{
+    float: left;
+    margin-right: 10%;
+}
+.right{
+    float: right;
+    margin-left: 10%;
+}
+.content-right{
+    text-align: right;
+}
+.content-left{
+    text-align: left;
+}
+
+/*****************Media Query***************/
+@media (max-width:1020px) and (min-width:901px){
+    .event-image{
+        width:40%;
+    }
+}
+ @media (max-width:900px) and (min-width:430px){ 
+            /*event*/
+                 h2{
+                    font-size: 10vh;
+                    padding: 0 0 1%;
+                }
+                p{
+                    font-size: 15px;
+                    padding: 2% 0 2%;
+                    line-height: 1.75;
+                }
+                button{
+                    padding: 1% 0 2%;
+                   
+                }
+                .content-left{
+                    margin-top: 3%;
+                    text-align: center;
+                }
+                .content-right{
+                    margin-top: 3%;
+                    text-align: center;
+                }
+                .row{
+                    text-align: center;
+                    padding: 0% 0 0% 0;
+                    margin: 80px auto 80px auto;
+                    width: 90%;
+                }
+                .left{
+                    float: none;
+                    margin: 0 auto 0 auto;  
+                }
+                .right{
+                    float: none;
+                    margin: 0 auto 0 auto;  
+                }
+                .event-image{
+                    width: 65%;
+                    margin-bottom:5%;
+                    margin-top: 5%;
+                }
+                .triangle-left{
+                    border-top: 100px solid transparent;
+	                border-right: 15vw solid #28313b;
+                    border-bottom: 200px solid transparent;
+                }
+                .triangle-right{
+                    border-top: 200px solid transparent;
+	                border-left: 15vw solid #28313b;
+                    border-bottom: 100px solid transparent;
+                }
+             } 
+
+ @media (max-width:430px){ 
+     title*/
+     .title{
+        text-align: center;
+        padding-top: 4%;
+        padding-bottom: 2%;
+        font-size: 7vw;
+    } 
+    /*event*/
+         h2{
+            font-size: 20px;
+            padding: 0 0 1%;
+        }
+        p{
+            font-size: 20px;
+            padding: 2% 0 2%;
+            line-height: 1.75;
+        }
+        button{
+            padding: 2% 0 1%;
+           size: small;
+        }
+        .content-left{
+            margin: 3% auto 0 auto;
+            text-align: center;
+        }
+        .content-right{
+            margin: 3% auto 0 auto;
+            text-align: center;
+        }
+        .row{
+            text-align: center;
+            padding: 0% 0 0% 0;
+            margin: 100px auto 100px auto;
+            width: 90%;
+        }
+        .left{
+            float: none;
+            margin: 0 auto 0 auto;  
+        }
+        .right{
+            float: none;
+            margin: 0 auto 0 auto;  
+        }
+        .event-image{
+            width: 100%;
+            margin-bottom:5%;
+            margin-top: 5%;
+        }
+        .triangle-left{
+            border-top: 70px solid transparent;
+            border-right: 15vw solid #28313b;
+            border-bottom: 140px solid transparent;
+        }
+        .triangle-right{
+            border-top: 140px solid transparent;
+            border-left: 15vw solid #28313b;
+            border-bottom: 70px solid transparent;
+        }
+     }
+   
+
+
+
+
+
+#ecs-logo{
+      height:4.5vw ;
+      width: auto;        
+}
+#nav-text{
+      font-size:25px;  
+}
+
+
+@media only screen and (max-width:768px){
+     #ecs-logo{
+      height:2em ;
+      width: auto;         
+} 
+#nav-text{
+      font-size:20px;  
+}
+}
+
+
+
+@media only screen and (max-width: 479px) {
+      .title{
+        font-size:10vw;
+      }
+}
+    </style>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--bootstrap jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   
+  </head>
+  <body id="body">
+    <div id="loading">
+        <div class="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div>
+    </div>
+   
+
+
+   <div id="body-content" style="display:none;">
+    <div class="triangle-right triangle"></div>
+    <div class="triangle-left triangle"></div>
+    <!-- navbar -->
+    <div>
+    <nav class="navbar  navbar-expand-md navbar-light navbar-trans menubar" id="navbarDisplay">
+        <a class="navbar-brand" href="/" style="color:white">
+            <img src="logo4.png" id="ecs-logo">
+        </a>    
+        <button class="navbar-toggler navbar-toggler-right d-md-none" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link active" id="nav-text" href="/spectrum" style="color:white">Home</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum#contact" style="color:white">Contact Us</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum#developers" style="color:white">Developers</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+    <!-- title -->
+    <div class="">
+        <h1 class="title">Literary Module</h1>
+    </div>
+
+    <!-- events -->
+    <div class="events">
+    <div class="container-fluid">
+       <div class="row slideUp" >
+         <div class="col-md-12">
+           
+           <div class="content-left">
+             <h2>Get Hired</h2>
+             <img class="event-image right" src="gethired.png" alt="">
+             <p>Get Hired! Everyone is seeking for the one perfect job. But what are the pivotal aspect one projects for them to be selected by the panel?
+                Quit stalling around and get a first-hand experience of the placement procedure through Spectrum presents “Get Hired”.
+                <br>Rules:
+                <br>1. There will be an Aptitude Round. This will be like a screening test.
+                <br>The top 15 participants will be selected
+                for the next round.
+                <br>Note: Calculators are strictly prohibited.
+                <br>2. The second round will be a Group Discussion round. In first round, "Abstract topic" will be given and in second round "Controversial Topic" will be given and every participant will be marked. The top scorers 6 will qualify for the Personal Interview Round.
+                <br>3. The third and final round will be the personal interview.
+                <br>After the PI top 3 candidates will be hired.
+                
+                <br>Date: 03/04/2021 Time: 7:00pm – 7:30pm 
+                <br>Organisers:
+                <br>Aditya Bhura
+                <br>Kaustubh Patil<br>
+                Amar Chetri<br>
+                Prapti Khasyap
+                    </p>
+                <a href="https://chat.whatsapp.com/FXI0Bf441FkEKDNTWJcJFO">
+                    <button class="btn btn-dark">Join Whatsapp Group</button>
+                  </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+       <div class="row" id="slide1">
+            <div class="col-md-12">
+              
+              <div class="content-right">
+              <h2>Poeisis</h2>
+              <img class="event-image left" src="poeisis.png" alt="">
+              <p>All of us have a certain hidden talent inside us. Some are shown the light of day whereas some remain unidentified forever. With the life of the 21st century, we had had spent more time infront of the “Screens” and lesser and lesser time with ourselves, understanding ourself. <br>
+One of the benefits that has been bestowed upon us owing to lockdown is to slowdown, and spent time understanding ourselves and those hidden talents which otherwise would have remained hidden forever.<br>
+Such a talent is poetry. Almost lost to time, poetry still remains one of the earliest recorded witnesses of history and time. Be it the Iliad of the Greeks, or Mahabharat of the hindus, or the works of the infamous William Wordsworth.<br>
+Poeisis under Spectrum 7.0 provides you the perfect opportunity to bring out the poet inside of you.<br>
+This year has shown a lot of turns and takes which are still unfathomable. Many are left with feelings yet to be revealed to the surface. Life throws at you many unannounced events. Sometimes we are brave enough to face them with a smile, other times we just leave it be. Howerver strong or however<br> vulnerable we may seem, that is a part of life. That is Life itself. Keeping all in mind, we have decided on the theme “Unpredictable and Unvented”.<br>
+ This is the platform where you can release all those stocked up emotions, all those desires, present your thoughts as fresh and raw as the green fields and clear blue sky.<br>
+This is your time to pour your emotions and express it in its purest and pious form through your peoms.<br>
+Hurry all and sent in your entries by 6th of April, 2021.<br> 
+Deadline: 6/04/2021, 11:59pm<br>
+
+                Organisers:<br>
+                Afsana Yasim<br>
+                Prapti Khasyap
+              </p>
+              <a href="#">
+                <button class="btn btn-dark">Submit Your Entry Here</button>
+              </a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" id="slide2">
+        <div class="col-md-12">
+          
+          <div class="content-left">
+            <h2>Minimalist</h2>
+            <img class="event-image right" src="minimalist.png" alt="">
+            <p>How magical it is that mere digital posters depict something so much meaningful. How certain sets of shapes can prove to have such a great remark in our minds. Well, that's what you can do too. Minimalist, first of its kind, gives you a platform to do so. You get to express a plethora of details using the simplest of designs.
+                <br>Spectrum 7.0 brings to you Minimalist, the digital art contest, where you can pour in your technical touch to the traditional and meaningful art. Go for it, impress us with your digital strokes.
+                
+                <br>Themes: New-Normal life.
+                
+                <br>Judging Criteria:
+                
+                <br> •Like any online event, the criteria for judgement is simple. We post the responses on daily basis from 4th of April till 7th of April  and count the number of likes/reacts + shares. That constitutes 30% of the score, and the rest 70% based on the judges.
+                <br>• The creations are to be submitted through the link given below.
+                <br>•Entries will be accepted from 3rd of April till 7th of April.
+                <br>•There is no limit to the number of entries per person (do make sure to stick to the theme).  
+                <br>
+                Organisers:<br>
+                Dipesh Sinha<br>
+                Ruchika Parag Barman
+            </p>
+             <a href="#">
+                <button class="btn btn-dark">Submit Your Entry Here</button>
+              </a>
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <div class="container-fluid">
+    <div class="row" id="slide3">
+         <div class="col-md-12">
+           <div class="content-right">
+           <h2>'हिंदी' Non Stop</h2>
+           <img class="event-image left" src="hindi.png" alt="">
+           <p>
+            So, you think you have a good hold over our National Language?<br>
+            Language is that thing which binds all together. Hindi, this beautiful and historic language has a special place in our hearts. We all know that the people overseas take courses to learn the language we own since our birth.
+            <br>
+            We are evolving and inclining towards Western culture but does that mean we have forgotten our roots? We use a lot English words in our daily lives, but what if, we eliminate those words for a while and try sticking to one language?
+            <br>
+            Spectrum 7.0 brings to " 'हिंदी' non-stop", a fun event where you will be given a topic or theme and you will be talking about it in Hindi, without using a word of any other Language. Sounds cranky? Well then, we can just find out how it is really going to be. 
+            <br>
+            Rules:<br>
+            ° Each person will get 60 second to speak.<br>
+            ° Random will be given and the person should use only Hindi.<br>
+            ° Every word spoken in other Language will lead to negative marking.<br>
+            ° Marks will be awarded on the basis of the content spoken as well as Fluency.<br>
+            ° Date: 6th of April<br>
+              Time: 5pm <br>
+            °Platform: Google Meet<br>
+            ° Links will be provided to the registered candidates before the event via email.<br>
+            °Open to all.<br>
+            Organisers:<br>
+                Dipesh Sinha<br>
+                Afsana Yasmin
+            
+           </p>
+           <a href="#">
+            <button class="btn btn-dark">Register Here</button>
+          </a>
+           </div>
+         </div>
+     </div>
+ </div>
+
+ <div class="container-fluid">
+      <div class="row" id="slide4">
+        <div class="col-md-12">
+          
+          <div class="content-left">
+            <h2>Masks And Tasks(Quiz)</h2>
+            <img class="event-image right" src="quiz.png" alt="">
+            <p>What? How? Really, this was it??
+                <br>
+                That's what happens when you happen to sit for a quiz and you miss the answer by a whisker. Let's not turn it around more without getting any logic, just getting to the point where only the right answer matters. 
+                <br>
+                Spectrum 7.0 presents The 'New-Normal'  Quiz: 'Masks and Tasks', with all the genres included, for every quizzing mind out there. Let's get started to squeeze your brain a bit more, in multiple directions and getting to the hole we have dug in for you. Clock starts ticking as we declare the registration open. 
+                <br>
+                This quiz is to be held in three rounds and yes, in a team of three. Discover or scratch out a cool name for your team and let's get going!! 
+                <br>
+                Complete Rules and Regulations are uploaded on Spectrum's Page<br>
+                Organisers:<br>
+                Pratik Vijj<br>
+                Afsana Yasmin<br>
+                Kushagra Kumar<br>
+                Arindom Bora<br>
+                Rekhav Das<br>
+                Himanta Biswa Deka
+                </p>
+                
+            <a href="#">
+                <button class="btn btn-dark">Register Here</button>
+              </a>
+           </div>
+         </div>
+       </div>
+   </div>
+
+</div>
+</div>
+<script type="text/javascript">
+  var loading=document.getElementById("loading");
+  var bodyContent=document.getElementById("body-content");
+  let start = Date.now();
+        let timer = setInterval(function() {
+        // how much time passed from the start?
+        let timePassed = Date.now() - start;
+        // console.log(timePassed);
+        if (timePassed >= 6500) {
+            // console.log("CLEARING");
+            clearInterval(timer);
+            introImgDisplay();
+            return;
+        }
+            
+        },6.5);
+
+        function introImgDisplay() {
+            bodyContent.style.display="block";
+            body.style.backgroundImage="linear-gradient(315deg,#03a9f4,#ff0058)"
+            loading.style.display="none";
+            // console.log("Displayed spectrum logo");
+        } 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="index.js"></script>
+  </body>
+</html>

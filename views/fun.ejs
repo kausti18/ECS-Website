@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spectrum | Fun Module</title>
+    <link rel="icon" href="spectrum-logo-white.jpeg" type="image/icon type">
+     <!--fonts-->
+     <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400&family=Merriweather&family=Roboto:ital,wght@0,500;0,700;0,900;1,500;1,700;1,900&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- stylesheet -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body{
+            background: fixed;
+            max-height: 1000px;
+      } 
+
+#nav-text{
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+
+
+/*******************TITLE***************/
+/****/
+ .loader {
+    background: white;
+   /* background: radial-gradient(#222, #000);*/
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+    spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+  ;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+.loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+.loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+.loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+.loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%, 15% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+  /*Show body content and hide loading*/
+  #body-content{
+    animation-name:showContent;
+    animation-duration:1s
+  }
+
+  @keyframes showContent{
+    0%{
+      opacity:0;
+    }100%{
+      opacity:1;
+    }
+  }
+
+
+
+
+
+
+
+/* selectors */
+ 
+ .title{
+  /*  font-weight:bold;*/
+      font-family: Bookman;
+      font-variant:small-caps;
+     text-align: center;
+     padding-top: 4%;
+     padding-bottom: 5%;
+     font-size: 10vh;
+     color: #edffec;
+ }
+ 
+ /******************Background*****************/
+ 
+ .triangle-right {
+     z-index: -1;
+     position: fixed;
+     left: 0;
+     bottom: -6%;
+	width: 0;
+	height: 0;
+	border-top: 300px solid transparent;
+	border-left: 15vw solid #28313b;
+    border-bottom: 150px solid transparent;
+    filter: drop-shadow(2px 2px 5px 	#7c9473);
+}
+
+.triangle-left {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    top: 5vh;
+	width: 0;
+	height: 0;
+	border-top: 150px solid transparent;
+	border-right: 15vw solid #28313b;
+    border-bottom: 300px solid transparent;
+    filter: drop-shadow(0px 2px 2px 	#f8f5f1);
+}
+/******************EVENTS**************/
+/*selector*/
+.slideUp {
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;
+	animation-duration: 2.5s;
+	-webkit-animation-duration: 2.5s;
+	visibility: visible;
+  }
+  
+  @keyframes slideUp {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translateY(70%);
+	} 
+	100% {
+	  opacity: 1;
+	  -webkit-transform: translateY(0%);
+	}
+  }
+  
+  @-webkit-keyframes slideUp {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translateY(70%);
+	} 
+	100% {
+	  opacity: 1;
+	  -webkit-transform: translateY(0%);
+	}
+  }
+
+h2{
+    padding: 0 0 2%;
+    font-size: 10vh;
+    font-family: Bookman;
+    font-weight:bold;
+    font-weight: 800;
+    color:white;
+}
+p{
+    padding: 2% 0 2%;
+    line-height: 1.5;
+    font-size: 20px;
+    /*font-family: 'Merriweather', serif;*/
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+    color: white;
+}
+button{
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+    padding: 1% 0 2%;
+}
+
+/* class selectors */
+.row{
+    text-align: center;
+    padding: 3% 0 3% 0;
+    margin: 50px auto 50px auto;
+    width: 90%;
+    margin-left: 0px;
+    
+}
+.events{
+    margin: 0 0 0 11%;
+    padding: 0% 3% 2% 3%;
+}
+.event-image{
+    width: 30%;
+}
+.left{
+    float: left;
+    margin-right: 10%;
+}
+.right{
+    float: right;
+    margin-left: 10%;
+}
+.content-right{
+    text-align: right;
+}
+.content-left{
+    text-align: left;
+}
+
+/*****************Media Query***************/
+@media (max-width:1020px) and (min-width:901px){
+    .event-image{
+        width:40%;
+    }
+}
+ @media (max-width:900px) and (min-width:430px){ 
+            /*event*/
+                 h2{
+                    font-size: 10vh;
+                    padding: 0 0 1%;
+                }
+                p{
+                    font-size: 15px;
+                    padding: 2% 0 2%;
+                    line-height: 1.75;
+                }
+                button{
+                    padding: 1% 0 2%;
+                   
+                }
+                .content-left{
+                    margin-top: 3%;
+                    text-align: center;
+                }
+                .content-right{
+                    margin-top: 3%;
+                    text-align: center;
+                }
+                .row{
+                    text-align: center;
+                    padding: 0% 0 0% 0;
+                    margin: 80px auto 80px auto;
+                    width: 90%;
+                }
+                .left{
+                    float: none;
+                    margin: 0 auto 0 auto;  
+                }
+                .right{
+                    float: none;
+                    margin: 0 auto 0 auto;  
+                }
+                .event-image{
+                    width: 65%;
+                    margin-bottom:5%;
+                    margin-top: 5%;
+                }
+                .triangle-left{
+                    border-top: 100px solid transparent;
+	                border-right: 15vw solid #28313b;
+                    border-bottom: 200px solid transparent;
+                }
+                .triangle-right{
+                    border-top: 200px solid transparent;
+	                border-left: 15vw solid #28313b;
+                    border-bottom: 100px solid transparent;
+                }
+             } 
+
+ @media (max-width:430px){ 
+     title*/
+     .title{
+        text-align: center;
+        padding-top: 4%;
+        padding-bottom: 2%;
+        font-size: 7vw;
+    } 
+    /*event*/
+         h2{
+            font-size: 20px;
+            padding: 0 0 1%;
+        }
+        p{
+            font-size: 20px;
+            padding: 2% 0 2%;
+            line-height: 1.75;
+        }
+        button{
+            padding: 2% 0 1%;
+           size: small;
+        }
+        .content-left{
+            margin: 3% auto 0 auto;
+            text-align: center;
+        }
+        .content-right{
+            margin: 3% auto 0 auto;
+            text-align: center;
+        }
+        .row{
+            text-align: center;
+            padding: 0% 0 0% 0;
+            margin: 100px auto 100px auto;
+            width: 90%;
+        }
+        .left{
+            float: none;
+            margin: 0 auto 0 auto;  
+        }
+        .right{
+            float: none;
+            margin: 0 auto 0 auto;  
+        }
+        .event-image{
+            width: 100%;
+            margin-bottom:5%;
+            margin-top: 5%;
+        }
+        .triangle-left{
+            border-top: 70px solid transparent;
+            border-right: 15vw solid #28313b;
+            border-bottom: 140px solid transparent;
+        }
+        .triangle-right{
+            border-top: 140px solid transparent;
+            border-left: 15vw solid #28313b;
+            border-bottom: 70px solid transparent;
+        }
+     }
+   
+
+
+
+
+
+#ecs-logo{
+      height:4.5vw ;
+      width: auto;        
+}
+#nav-text{
+      font-size:25px;  
+}
+
+
+@media only screen and (max-width:768px){
+     #ecs-logo{
+      height:2em ;
+      width: auto;         
+} 
+#nav-text{
+      font-size:20px;  
+}
+}
+
+
+
+@media only screen and (max-width: 479px) {
+      .title{
+        font-size:10vw;
+      }
+}
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--bootstrap jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+  </head>
+  <body id="body">
+    <div id="loading">
+        <div class="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div>
+    </div>
+   
+
+
+   <div id="body-content" style="display:none;">
+    <div class="triangle-right triangle"></div>
+    <div class="triangle-left triangle"></div>
+    <!-- navbar -->
+    <div>
+    <nav class="navbar  navbar-expand-md navbar-light navbar-trans menubar" id="navbarDisplay">
+        <a class="navbar-brand" href="/" style="color:white">
+            <img src="logo4.png" id="ecs-logo">
+        </a>    
+        <button class="navbar-toggler navbar-toggler-right d-md-none" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link active" id="nav-text" href="/spectrum" style="color:white">Home</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum#contact" style="color:white">Contact Us</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum#developers" style="color:white">Developers</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+    <!-- title -->
+    <div class="">
+        <h1 class="title">Fun Module</h1>
+    </div>
+
+    <!-- events -->
+    <div class="events">
+    <div class="container-fluid">
+       <div class="row slideUp" >
+         <div class="col-md-12">
+           
+           <div class="content-left">
+             <h2>Knock Your Heads</h2>
+             <img class="event-image right" src="knockyourheads.png" alt="">
+             <p>As we go ahead to reach the destination, we face our opponents, sometimes one-on-one and at times, the whole world seems to stand against you, fighting to take the place you are supposed to.<br>
+                There we bring an event where your knowledge is going be to tested, your thinking ability is to be challenged and your speed is going to be exposed.<br>
+                Spectrum 7.0 brings to all 'Knock Your Heads', which is a cumulation of logical, mathematical and general questionnaire. <br>
+                This event is going to be held via Google forms and it is open to all.<br>
+                Come on, bring on the game and let's see, who knocks out whom and gets to the top.<br>
+                Date: 3rd of April<br>
+                Time: 6:00 pm to 6:45 pm.<br>
+                Medium: Google forms.<br>
+                The link will be posted on the page 5 minutes prior to the knockout session. <br>
+                Organisers:<br>
+                Kaustubh Patil<br>
+                Amar Chetri<br>
+                Ruchika Parag Barman
+            </p>
+              <a href="https://chat.whatsapp.com/GJInZgfW1uJIAvDH3g5PqG">
+                <button class="btn btn-dark">Join WhatsApp Group</button>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+       <div class="row" id="slide1">
+            <div class="col-md-12">
+              
+              <div class="content-right">
+              <h2>Scribble</h2>
+              <img class="event-image left" src="scribble.png" alt="">
+              <p>After a whole year of lockdown, we have finally rounded back to April 2021. A year back, no one would have imagined a year to pass by as we have passed the last one. We are bringing you one of the enticing yet elemental game to have originated over the course of 2020, “Skribbl 2.0: The better and modified form of Pictionary”.<br>
+                Now, rules are pretty simple. We all have played Pictionary once in our lifetime. Be it in a party or during school lunches. This is an online platform where you will be given three words to choose from. You have to select one and draw out the word you have chosen. The rest of the players will have to guess what your picked word is.<br>
+                What an inventive way to increase your vocabulary! So what are you waiting for, take out your phones and laptops and start filling out the registration forms. We are live now!<br>
+                Organisers:<br>
+                Afsana Yasmin<br>
+                Prapti Khasyap
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdslRvB59ZAsntFKuNi12Rtq_CgbbpwbVKPSdtHBZBo3HEFog/viewform?fbclid=IwAR3BgVKxOGaCRHfVv-CUcjf6vNrICy3xERjKreR9w5A3o1kS5Z5B_AMqzUI">
+                <button class="btn btn-dark">Register Here</button>
+              </a>  
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" id="slide2">
+        <div class="col-md-12">
+          
+          <div class="content-left">
+            <h2>Memecraft</h2>
+            <img class="event-image right" src="memecraft.png" alt="">
+            <p>
+                How curious and excited do you get on hearting Bhau's, "Ruko Zara, sabr Karo!?? Do all of you not feel the same as that Pakistani Cricket fan most of the times and shout out, "Ooo Bhai, maaro mujhe maaro."?? Memes are a cure, memes are a source of survival, specially in the pandemic situation where we are away from the normal lives, these memes have made us go through all, laughing and making others laugh. 
+<br>
+"Wait a minute!! Who are you?" A memer? A certified one or a noob-master?? Let's bring on the meme battle and crown the best one amongst us. 
+ECS brings to you MEMECRAFT under Spectrum 7.0, which is basically a competition to find out the best meme creator. A theme or template will be provided and one has to submit his/her creation through the doc link given below.
+<br>
+
+Judgement Criteria:<br>
+° 30% on the basis of reacts and shares.<br>
+° 70% judge's view on content.<br>
+
+We will start accepting entries from 4th of April midnight till 6th of April 11:59 pm.<br>
+Organiser:<br>
+Aditya Bhura<br>
+Rohit Raj
+            </p>
+            <a href="#">
+                <button class="btn btn-dark">Submit Your Entry Here</button>
+            </a> 
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <div class="container-fluid">
+    <div class="row" id="slide3">
+         <div class="col-md-12">
+           <div class="content-right">
+           <h2>Ipl Auction</h2>
+           <img class="event-image left" src="iplauction.png" alt="">
+           <p>
+            What’s an event without a bit of sports in it!
+<br>And what better at it then cricket itself. With the IPL around the corner, everyone are fighting tooth and nail and rooting for their favorites. This time Spectrum brings to you a new and refined form of IPL Auction.
+<br>This event will be conducted in 2 rounds. In the first round, you will be scrutinized based on your knowledge about IPL through the IPL quiz. The qualifiers will then proceed to the second round, where the IPL Auction will be conducted in all its glory.
+<br>What’s keeping you from the battle. Hurry up and register yourselves to the link given below.
+<br>You can form a team of maximum 3 peoples or play individually 
+<br>Round 1:
+<br>Date: 4/04/2021
+<br>Time: 5:00pm to 5:30pm
+<br>Organisers:
+<br>Aditya Bhura
+<br>Rohit Raj
+<br>Rekhav Das
+<br>Kushagra Kumar
+           </p>
+           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVLNKOgg86VP-Mrdy43QyJtMXFkeI2Ko0EIblPsRKB4HQ88A/viewform?usp=sf_link">
+                <button class="btn btn-dark">Register Here</button>
+            </a> 
+           </div>
+         </div>
+     </div>
+ </div>
+
+ <div class="container-fluid">
+      <div class="row" id="slide4">
+        <div class="col-md-12">
+          
+          <div class="content-left">
+            <h2>Chamber of Secrets</h2>
+            <img class="event-image right" src="chamberofsecrets.png" alt="">
+            <p>
+                Does the box has all that you have hidden?? Are all secrets in the right pattern to get diminished from the brightest of minds? Well, people around can shine brighter than anyone else and dig in deepest to reveal the secrets. 
+<br>
+Spectrum 7.0 brings once again, the most popular and site-crashing(for a reason) event, "Chamber of Secrets" with the same enthusiasm and secrecy like the previous years. Shh, don't think much, just go and register, and try finding out the secrets stored in each chamber. 
+<br>
+Rules will be said before the event<br>
+Organisers:<br>
+Kushagra Kumar<br>
+Dipesh Sinha<br>
+Aditya Bhura
+
+            </p>
+            <a href="https://cos-3.000webhostapp.com/">
+                <button class="btn btn-dark">Contest is Live</button>
+            </a> 
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <div class="container-fluid">
+    <div class="row" id="slide5">
+         <div class="col-md-12">
+           <div class="content-right">
+           <h2>Moments</h2>
+           <img class="event-image left" src="moments.png" alt="">
+           <p>
+            Howdie Shutterbugs!<br>
+Its been another year, a perplexing one at that. We have rounded another loop around the sun and we are back to square one. That means, we’ve finally reached another season of Moments. Spectrum 7.0 presents, Moments, allows you to bring forth your skills and control over the isos and focuses. It is the annual photography contest under Spectrum. <br>
+This time around we have decided to keep an “Open Theme” in order to encourage a huge amount of participation. So, what’s keeping you? Grab that Canon, open the camera of your phone and start clicking away!<br>
+Note: The photos should have only minimum adjustments.<br>
+We will start accepting entries from 4th of April midnight till 7th of April 11:59 pm.
+<br>Organsiers
+<br>Afsana Yasmin
+<br>Kaustubh Patil
+           </p>
+               <a href="#">
+                <button class="btn btn-dark">Submit Your Entry Here</button>
+            </a> 
+           </div>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+<script type="text/javascript">
+  var loading=document.getElementById("loading");
+  var bodyContent=document.getElementById("body-content");
+  let start = Date.now();
+        let timer = setInterval(function() {
+        // how much time passed from the start?
+        let timePassed = Date.now() - start;
+        // console.log(timePassed);
+        if (timePassed >= 6500) {
+            // console.log("CLEARING");
+            clearInterval(timer);
+            introImgDisplay();
+            return;
+        }
+            
+        },6.5);
+
+        function introImgDisplay() {
+            bodyContent.style.display="block";
+            body.style.backgroundImage="linear-gradient(315deg,#4dff03,#00d0ff)"
+            loading.style.display="none";
+            // console.log("Displayed spectrum logo");
+        } 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="index.js"></script>
+  </body>
+</html>

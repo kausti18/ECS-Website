@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spectrum | Technical Module</title>
+    <link rel="icon" href="spectrum-logo-white.jpeg" type="image/icon type">
+     <!--fonts-->
+     <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400&family=Merriweather&family=Roboto:ital,wght@0,500;0,700;0,900;1,500;1,700;1,900&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- stylesheet -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body{
+            background: fixed;
+            max-height: 1000px;
+      } 
+
+#nav-text{
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+
+
+/*******************TITLE***************/
+/****/
+ .loader {
+    background: white;
+   /* background: radial-gradient(#222, #000);*/
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+    spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+  ;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+.loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+.loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+.loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+.loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%, 15% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+  /*Show body content and hide loading*/
+  #body-content{
+    animation-name:showContent;
+    animation-duration:1s
+  }
+
+  @keyframes showContent{
+    0%{
+      opacity:0;
+    }100%{
+      opacity:1;
+    }
+  }
+
+
+
+
+
+
+
+/* selectors */
+ 
+ .title{
+  /*  font-weight:bold;*/
+      font-family: Bookman;
+      font-variant:small-caps;
+     text-align: center;
+     padding-top: 4%;
+     padding-bottom: 5%;
+     font-size: 10vh;
+     color: #edffec;
+ }
+ 
+ /******************Background*****************/
+ 
+ .triangle-right {
+     z-index: -1;
+     position: fixed;
+     left: 0;
+     bottom: -6%;
+	width: 0;
+	height: 0;
+	border-top: 300px solid transparent;
+	border-left: 15vw solid #28313b;
+    border-bottom: 150px solid transparent;
+    filter: drop-shadow(2px 2px 5px 	#7c9473);
+}
+
+.triangle-left {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    top: 5vh;
+	width: 0;
+	height: 0;
+	border-top: 150px solid transparent;
+	border-right: 15vw solid #28313b;
+    border-bottom: 300px solid transparent;
+    filter: drop-shadow(0px 2px 2px 	#f8f5f1);
+}
+/******************EVENTS**************/
+/*selector*/
+.slideUp {
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;
+	animation-duration: 2.5s;
+	-webkit-animation-duration: 2.5s;
+	visibility: visible;
+  }
+  
+  @keyframes slideUp {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translateY(70%);
+	} 
+	100% {
+	  opacity: 1;
+	  -webkit-transform: translateY(0%);
+	}
+  }
+  
+  @-webkit-keyframes slideUp {
+	0% {
+	  opacity: 0;
+	  -webkit-transform: translateY(70%);
+	} 
+	100% {
+	  opacity: 1;
+	  -webkit-transform: translateY(0%);
+	}
+  }
+
+h2{
+    padding: 0 0 2%;
+    font-size: 10vh;
+    font-family: Bookman;
+    font-weight:bold;
+    font-weight: 800;
+    color:white;
+}
+p{
+    padding: 2% 0 2%;
+    line-height: 1.5;
+    font-size: 20px;
+    /*font-family: 'Merriweather', serif;*/
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+    color: white;
+}
+button{
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+    padding: 1% 0 2%;
+}
+
+/* class selectors */
+.row{
+    text-align: center;
+    padding: 3% 0 3% 0;
+    margin: 50px auto 50px auto;
+    width: 90%;
+    margin-left: 0px;
+    
+}
+.events{
+    margin: 0 0 0 11%;
+    padding: 0% 3% 2% 3%;
+}
+.event-image{
+    width: 30%;
+}
+.left{
+    float: left;
+    margin-right: 10%;
+}
+.right{
+    float: right;
+    margin-left: 10%;
+}
+.content-right{
+    text-align: right;
+}
+.content-left{
+    text-align: left;
+}
+
+/*****************Media Query***************/
+@media (max-width:1020px) and (min-width:901px){
+    .event-image{
+        width:50%;
+    }
+}
+ @media (max-width:900px) and (min-width:430px){ 
+            /*event*/
+                 h2{
+                    font-size: 10vh;
+                    padding: 0 0 1%;
+                }
+                p{
+                    font-size: 15px;
+                    padding: 2% 0 2%;
+                    line-height: 1.75;
+                }
+                button{
+                    padding: 1% 0 2%;
+                   
+                }
+                .content-left{
+                    margin-top: 3%;
+                    text-align: center;
+                }
+                .content-right{
+                    margin-top: 3%;
+                    text-align: center;
+                }
+                .row{
+                    text-align: center;
+                    padding: 0% 0 0% 0;
+                    margin: 80px auto 80px auto;
+                    width: 90%;
+                }
+                .left{
+                    float: none;
+                    margin: 0 auto 0 auto;  
+                }
+                .right{
+                    float: none;
+                    margin: 0 auto 0 auto;  
+                }
+                .event-image{
+                    width: 65%;
+                    margin-bottom:5%;
+                    margin-top: 5%;
+                }
+                .triangle-left{
+                    border-top: 100px solid transparent;
+	                border-right: 15vw solid #28313b;
+                    border-bottom: 200px solid transparent;
+                }
+                .triangle-right{
+                    border-top: 200px solid transparent;
+	                border-left: 15vw solid #28313b;
+                    border-bottom: 100px solid transparent;
+                }
+             } 
+
+ @media (max-width:430px){ 
+     title*/
+     .title{
+        text-align: center;
+        padding-top: 4%;
+        padding-bottom: 2%;
+        font-size: 7vw;
+    } 
+    /*event*/
+         h2{
+            font-size: 20px;
+            padding: 0 0 1%;
+        }
+        p{
+            font-size: 20px;
+            padding: 2% 0 2%;
+            line-height: 1.75;
+        }
+        button{
+            padding: 2% 0 1%;
+           size: small;
+        }
+        .content-left{
+            margin: 3% auto 0 auto;
+            text-align: center;
+        }
+        .content-right{
+            margin: 3% auto 0 auto;
+            text-align: center;
+        }
+        .row{
+            text-align: center;
+            padding: 0% 0 0% 0;
+            margin: 100px auto 100px auto;
+            width: 100%;
+        }
+        .left{
+            float: none;
+            margin: 0 auto 0 auto;  
+        }
+        .right{
+            float: none;
+            margin: 0 auto 0 auto;  
+        }
+        .event-image{
+            width: 100%;
+            margin-bottom:5%;
+            margin-top: 5%;
+        }
+        .triangle-left{
+            border-top: 70px solid transparent;
+            border-right: 15vw solid #28313b;
+            border-bottom: 140px solid transparent;
+        }
+        .triangle-right{
+            border-top: 140px solid transparent;
+            border-left: 15vw solid #28313b;
+            border-bottom: 70px solid transparent;
+        }
+     }
+   
+
+
+
+
+
+#ecs-logo{
+      height:4.5vw ;
+      width: auto;        
+}
+#nav-text{
+      font-size:25px;  
+}
+
+
+@media only screen and (max-width:768px){
+     #ecs-logo{
+      height:2em ;
+      width: auto;         
+} 
+#nav-text{
+      font-size:20px;  
+}
+}
+
+
+
+@media only screen and (max-width: 479px) {
+      .title{
+        font-size:10vw;
+      }
+}
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!--bootstrap jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    
+
+  </head>
+  <body id="body">
+    <div id="loading">
+        <div class="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div>
+    </div>
+   
+
+
+   <div id="body-content" style="display:none;">
+    <div class="triangle-right triangle"></div>
+    <div class="triangle-left triangle"></div>
+    <!-- navbar -->
+    <div>
+    <nav class="navbar  navbar-expand-md navbar-light navbar-trans menubar" id="navbarDisplay">
+        <a class="navbar-brand" href="/" style="color:white">
+            <img src="logo4.png" id="ecs-logo">
+        </a>    
+        <button class="navbar-toggler navbar-toggler-right d-md-none" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum" style="color:white;">Home</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum#contact" style="color:white">Contact Us</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                    <a class="nav-link" id="nav-text" href="/spectrum#developers" style="color:white">Developers</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+    <!-- title -->
+    <div class="">
+        <h1 class="title">Technical Module</h1>
+    </div>
+
+    <!-- events -->
+    <div class="events">
+    <div class="container-fluid">
+       <div class="row slideUp" >
+         <div class="col-md-12">
+           
+           <div class="content-left">
+             <h2>Electrohunt</h2>
+             <img class="event-image right" src="electrohunt.png" alt="">
+             <p>Hunt, be it in the jungle or in the open field, is often fascinating. Curiosity, Eagerness, Passion and Detective mind, these all resemble a person on a serious hunt. So, does he get to the target he had been looking for? Let's find out.
+                So ElectroManiacs, it's hunt time for you all.
+                
+                Spectrum 7.0 brings to all the Electronics Enthusiasts, "ElectroHunt", a Treasure Hunt where the treasure is one related to the interest foresake. 
+                Grab your thinking tools, set yourself steady and start with the hunt.
+                <br>
+                Rules and Regulations:
+               <br> ●	Password encrypted PDFs will be provided in a drive, which will contain the steps as numbered.
+               <br> ●	The first PDF will be open to all, the second one it is from where the real hunt starts. 
+               <br> ●	The password to the second PDF is the answer one will crack out if the first one and so on.
+               <br> ●	The last PDF contains the doc link where you have to submit all the answers and screenshots of all the questions as a proof that you have solved all the steps.
+               <br> ●	It is an individual event and open to all.
+               <br> ●	Date and time: 3rd of April, 8:30 pm.
+               <br> ●	Deadline: 12 noon, 4th of April.
+                <br>Organisers:
+                <br>Suvadip(8167465353)
+                <br>P.Harshvardhan (889712462)
+                <br>Amar(6001263831)
+                </p>
+               
+               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCtih0CQzJQ8Rjx4AW84Ba7AzgNkPIsgZ33EAoaLLt9EKktw/viewform?usp=sf_link">
+                <button class="btn btn-dark">Register Here</button>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+       <div class="row" id="slide1">
+            <div class="col-md-12">
+              
+              <div class="content-right">
+              <h2>Fast Web</h2>
+              <img class="event-image left" src="fast web.png" alt="">
+              <p>
+While roaming over the internet, have you ever wondered how the effective and amazing websites are made? Have you ever wondered of creating your very own website? Then you are at the right place! We are back with a bigger and better version of FastWeb - the Hackathon under the aegis of Spectrum 7.0.
+ECS brings to you all the first years of NITS, "Fast Web", a web development hackathon, where in you have to built a prototype of your planned website just using the Frontend skills. 
+<br>
+In the Hackathon you will be working in either individually or in teams to create website based on themes provided. 
+So gear up for the astonishing experience of developing a full fledged website.
+Details: <br>
+•Themes:<br>
+Will be Released on 3rd April at 8:00pm on Spectrum's page<br>
+•Mid-evaluation: 11:00am ,4th April<br>
+•Final-evaluation: 3:00pm ,4th April<br>
+The event is both team(Maximum 3 members) and individual<br>
+The event is open to all the branches.<br>
+Organsiers:<br>
+Aditya Bhura(9365697097)<br>
+Kautubh Patil(7666497477)<br>
+Shristi Sharma(7086827658)
+
+                </p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhc4B9TQQTq28XjW64FhJK7hh3yDBnhHBKct5hXbp1SQML8A/viewform?usp=sf_link">
+              <button class="btn btn-dark">Register Here</button>
+            </a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" id="slide2">
+        <div class="col-md-12">
+          
+          <div class="content-left">
+            <h2>Smartdroid</h2>
+            <img class="event-image right" src="smartdroid.png" alt="">
+            <p>A beautiful creation, be it technical or classic, steals away the show. An app with the most suitable features to please the user with utility, productivity as well as creativity, is one of the most cherishable token provided to us. 
+                <br>
+                Android development provides an opportunity to build your own app that will be a reflection of  a  interactive solution. ECS welcomes everyone to  SmartDroid 2.0, to showcase the triffles of android development via this Hackathon where you will be working either individually or in teams on the problem statement provided.
+                <br>
+                Details: <br>
+•Theme:<br>
+Will be Released on 3rd April at 8:00pm on Spectrum's page<br>
+•Mid-evaluation: 11:00am ,4th April<br>
+•Final-evaluation: 3:00pm ,4th April<br>
+The event is both team(Maximum 3 members) and individual<br>
+The event is open to all the branches. <br>
+Organisers:<br>
+Aditya Bhura(9365697097)<br>
+Kautubh Patil(7666497477)<br>
+Shristi Sharma(7086827658)   
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhc4B9TQQTq28XjW64FhJK7hh3yDBnhHBKct5hXbp1SQML8A/viewform?usp=sf_link">
+                <button class="btn btn-dark">Register Here</button>
+              </a>
+           </div>
+         </div>
+       </div>
+   </div>
+
+
+
+   <div class="container-fluid">
+    <div class="row" id="slide3">
+         <div class="col-md-12">
+           <div class="content-right">
+           <h2>Eniac</h2>
+           <img class="event-image left" src="eniac.png" alt="">
+           <p>
+            Whats up, Coders! This pandemic has been heavy on everyone except for the gamers and introverts. Boredom is the new meaning of daily life, huh?!
+           <br>Well, good news is up your alley. Spectrum 7.0 is back with another exciting version of ENIAC.  ENIAC thows at you a number of mind-boggling challenges testing your skills and every stage. It is a wonderful opportunity to showcase your abilities and knowledge. So what are you waiting for. Hurry up and register yourselves in the link given below.
+            <br>Date: 5th April
+            <br>Time: 9:00pm to 11:30pm
+            <br>Contest Duration: 2.5 hrs
+               Organisers:<br>
+               Depodipto Biswas<br>
+               Abhinav Saha<br>
+               Aditya Bhura(9365697097)<br>P.S- The contest is only for 1st years 
+           </p>
+           <a href="https://www.hackerrank.com/eniac-2021">
+            <button class="btn btn-dark">Register Here</button>
+          </a>
+           </div>
+         </div>
+     </div>
+ </div>
+
+ <div class="container-fluid">
+      <div class="row" id="slide4">
+        <div class="col-md-12">
+          
+          <div class="content-left">
+            <h2>Byte the code</h2>
+            <img class="event-image right" src="bytethecode.png" alt="">
+            <p>
+                Spectrum 7.0 presents Byte the Code brings to you an amazing opportunity to hone your coding skills and increase that brain-pedia. You have to solve a series of problems under a limited time-period. Wanna test yourselves? What’s stopping you?<br>
+Register yourselves on the link given below.<br>
+And…like Effie always said:<br>
+<em>May the odd be always in your favour.</em>
+<br>Date: 6/04/2021
+<br>Time: 9:00pm to 11:30pm
+<br>Duration: 2.5 hrs
+<br>Organsiers:
+<br>Subhra Shanka Sarma
+<br>Rishiraj Paul Choudhary
+<br>Debanga Bhuyan
+    </p>
+            <a href="#">
+                <button class="btn btn-dark">Register Here</button>
+              </a>
+           </div>
+         </div>
+       </div>
+   </div>
+
+   <div class="container-fluid">
+    <div class="row" id="slide5">
+         <div class="col-md-12">
+           <div class="content-right">
+           <h2>Arduino Mania</h2>
+           <img class="event-image left" src="arduinomania.png" alt="">
+           <p>
+            Greetings Maniacs. This is your time to shine. Spectrum is back with yet another season of the enthralling event called Arduino Mania. Get your gears ready and shiny!<br>
+            Details:<br>
+            1.You will have to prepare your project using either a hardware (if it's available) or send the simulation using simulation softwares like tinkercad. <br>
+            2.Make one video of your project explaining the working so that you can convince the judges about your project. In the video you can also present your ideas related to it. Try to make the video short and crisp. <br>
+            3.You will have to mail the video to ecs.nits2021@gmail.com <br>
+            Note: In the the subject of the email write Arduino mania along with your name and scholar id.<br>
+            Submission of Entries Starts From: 4th April<br>
+            Organisers:<br>
+            P.Harshvardhan<br>
+            Suvadip Sau
+           </p>
+           <a href="https://www.facebook.com/spectrum.nits">
+            <button class="btn btn-dark">For more info.</button>
+          </a>
+           </div>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+<script type="text/javascript">
+  var loading=document.getElementById("loading");
+  var bodyContent=document.getElementById("body-content");
+  let start = Date.now();
+        let timer = setInterval(function() {
+        // how much time passed from the start?
+        let timePassed = Date.now() - start;
+        // console.log(timePassed);
+        if (timePassed >= 6500) {
+            // console.log("CLEARING");
+            clearInterval(timer);
+            introImgDisplay();
+            return;
+        }
+            
+        },6.5);
+
+        function introImgDisplay() {
+            bodyContent.style.display="block";
+            body.style.backgroundImage="linear-gradient(45deg,#ffbc00,#ff0058)"
+            loading.style.display="none";
+            // console.log("Displayed spectrum logo");
+        } 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="index.js"></script>
+  </body>
+</html>
